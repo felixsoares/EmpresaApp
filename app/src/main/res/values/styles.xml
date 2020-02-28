@@ -1,0 +1,15 @@
+<resources>
+
+    <style name="DefaultAppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/beige</item>
+        <item name="colorPrimaryDark">@color/beige_dark</item>
+        <item name="colorAccent">@color/pink</item>
+    </style>
+
+    <style name="MainAppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/pink</item>
+        <item name="colorPrimaryDark">@color/pink_dark</item>
+        <item name="colorAccent">@color/white</item>
+    </style>
+
+</resources>

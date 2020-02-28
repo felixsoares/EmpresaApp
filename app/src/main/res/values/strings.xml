@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Empresa</string>
+    <string name="welcome">BEM-VINDO AO\nEMPRESAS</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, contetur adipiscing elit. Nunc accumsan.</string>
+    <string name="email">E-mail</string>
+    <string name="password">Senha</string>
+    <string name="login">Entrar</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Pesquisar</string>
+</resources>
