@@ -22,7 +22,7 @@ class LocalStorageImpl(
     override fun clearAll() {
         with(sharedPreferences.edit()) {
             clear()
-            apply()
+            commit()
         }
     }
 

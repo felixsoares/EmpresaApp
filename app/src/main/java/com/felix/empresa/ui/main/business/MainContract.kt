@@ -7,9 +7,11 @@ interface MainContract {
         fun doSearch(search: String)
         fun clear()
         fun getEnterprise(id: Int)
+        fun verifyMessageVisbility()
     }
 
     interface View {
+        fun showInitialMessage()
         fun openEnterpriseDetail(enterprise: EnterpriseVO)
         fun showLoading()
         fun hideLoading()

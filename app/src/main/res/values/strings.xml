@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Empresa</string>
+    <string name="app_name">Ioasys</string>
     <string name="welcome">BEM-VINDO AO\nEMPRESAS</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, contetur adipiscing elit. Nunc accumsan.</string>
     <string name="email">E-mail</string>

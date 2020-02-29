@@ -45,7 +45,7 @@ class EnterpriseAdapter(
                 txtCountry.text = enterprise.country
                 Glide.with(this).load(enterprise.image).into(imageView)
                 setOnClickListener {
-                    mClick.clickItem(enterprise.id)
+                    mClick.clickItem(enterprise.id, imageView)
                 }
             }
         }

@@ -38,9 +38,22 @@ class MainPresenter(
         )
     }
 
+    override fun verifyMessageVisbility() {
+        if (!mModel.hasEnterprise) {
+            mView.hideMessage()
+            mView.showInitialMessage()
+        }
+    }
+
     override fun doSearch(search: String) {
         mView.hideMessage()
         mView.showLoading()
+
+        if (!mModel.validateSearch(search)) {
+            mView.hideLoading()
+            mView.showMessage("Pesquisa somente após 3 caracteres")
+            return
+        }
 
         compositeDisposable.add(
             mRepository.doSearch(search)
@@ -50,13 +63,16 @@ class MainPresenter(
                 .subscribe({ response ->
                     when {
                         response.success && response.enterprises.isNotEmpty() -> {
+                            mModel.setHasEnterprises()
                             mView.hideMessage()
                             mView.setupEnterprises(response.enterprises)
                         }
                         response.success && response.enterprises.isEmpty() -> {
+                            mModel.setHasNotEnterprises()
                             mView.showMessage("Nenhuma empresa foi encontrada\npara busca realizada")
                         }
                         !response.success -> {
+                            mModel.setHasNotEnterprises()
                             mView.showMessage(response.errors[0])
                         }
                     }

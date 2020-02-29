@@ -2,12 +2,14 @@ package com.felix.empresa.ui.main.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.telecom.Call
 import android.view.Menu
 import android.view.View
+import android.widget.ImageView
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.util.Pair
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.felix.empresa.R
 import com.felix.empresa.data.vo.response.EnterpriseVO
@@ -18,12 +20,13 @@ import com.felix.empresa.util.ItemViewClick
 import com.felix.empresa.widget.CustomDialog
 import com.felix.empresa.widget.EnterpriseAdapter
 import kotlinx.android.synthetic.main.activity_main.*
-import org.koin.android.ext.android.inject
 import org.koin.android.scope.currentScope
 import org.koin.core.parameter.parametersOf
 
+
 class MainActivity : AppCompatActivity(), MainContract.View, ItemViewClick {
 
+    private var transitionImageView: ImageView? = null
     lateinit var mDialog: CustomDialog
     private val mAdapter by lazy {
         this.currentScope.get<EnterpriseAdapter> {
@@ -71,13 +74,19 @@ class MainActivity : AppCompatActivity(), MainContract.View, ItemViewClick {
         }
         mSearchView.setOnCloseListener {
             showHideLogo(true)
+            mPresenter.verifyMessageVisbility()
             false
         }
 
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun clickItem(id: Int) {
+    override fun showInitialMessage() {
+        txtInitMessage.visibility = View.VISIBLE
+    }
+
+    override fun clickItem(id: Int, imageView: ImageView) {
+        this.transitionImageView = imageView
         mPresenter.getEnterprise(id)
     }
 
@@ -124,7 +133,9 @@ class MainActivity : AppCompatActivity(), MainContract.View, ItemViewClick {
     override fun openEnterpriseDetail(enterprise: EnterpriseVO) {
         val intent = Intent(this, DetailActivity::class.java)
         intent.putExtra(Constants.ENTERPRISE, enterprise)
-        startActivity(intent)
+        val pair = Pair(transitionImageView as View, "imageEnterprise")
+        val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this, pair)
+        startActivity(intent, options.toBundle())
     }
 
     override fun showErrorToast() {

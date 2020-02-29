@@ -20,6 +20,7 @@
         <item name="colorPrimary">@color/pink</item>
         <item name="colorPrimaryDark">@color/pink_dark</item>
         <item name="colorAccent">@color/white</item>
+        <item name="android:windowContentTransitions">true</item>
     </style>
 
 </resources>

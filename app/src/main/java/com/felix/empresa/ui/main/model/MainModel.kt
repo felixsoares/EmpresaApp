@@ -8,4 +8,12 @@ class MainModel {
         return search.length > 3
     }
 
+    fun setHasEnterprises() {
+        hasEnterprise = true
+    }
+
+    fun setHasNotEnterprises(){
+        hasEnterprise = false
+    }
+
 }

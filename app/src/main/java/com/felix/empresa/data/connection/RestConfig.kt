@@ -37,8 +37,7 @@ object RestConfig {
         }
 
         val retrofit = Retrofit.Builder()
-            //.baseUrl("https://empresasapi.herokuapp.com/api/v1/")
-            .baseUrl("http://192.168.1.101:3000/api/v1/")
+            .baseUrl("https://empresasapi.herokuapp.com/api/v1/")
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
             .client(httpClient.build())

@@ -26,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_margin="20dp"
+            android:transitionName="imageEnterprise"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar" />
