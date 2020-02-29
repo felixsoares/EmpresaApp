@@ -1,9 +1,19 @@
 <resources>
 
     <style name="DefaultAppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="colorPrimary">@color/beige</item>
+        <item name="colorPrimary">@color/black</item>
         <item name="colorPrimaryDark">@color/beige_dark</item>
         <item name="colorAccent">@color/pink</item>
+    </style>
+
+    <style name="GreenTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorAccent">@color/green</item>
+    </style>
+
+    <style name="ToolBarStyle" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="actionMenuTextColor">@color/white</item>
     </style>
 
     <style name="MainAppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">

@@ -50,6 +50,7 @@ dependencies {
 
     // koin
     implementation 'org.koin:koin-android:2.0.1'
+    implementation "org.koin:koin-android-scope:2.0.1"
 
     // mockk
     testImplementation "io.mockk:mockk:1.9.3"

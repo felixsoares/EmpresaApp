@@ -1,0 +1,18 @@
+package com.felix.empresa
+
+import android.app.Application
+import com.felix.empresa.data.module.baseModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
+
+class MyApplication : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        startKoin {
+            androidContext(this@MyApplication)
+            modules(
+                baseModule
+            )
+        }
+    }
+}
