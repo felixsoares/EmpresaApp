@@ -17,13 +17,16 @@ Baixe o repositório
 git clone git clone https://bitbucket.org/felixsoares/empresas-android.git
 cd empresas-android
 ```
+
 Abra o [Android Studio, importe o projeto e execute](https://www.youtube.com/watch?v=70PvCIIejvg) em um emulador ou dispositivo que preferir. O aplicativo está com o nome Ioasys e ícone padrão de um projeto novo gerado pelo Android Studio.
 
 Usuário para login:
-* email: testeapple@<span></span>ioasys<span></span>.com.br
+
+* email: testeapple@ioasys.com.br
 * senha: 12341234
 
 Nomes das empresas disponíveis para pesquisa:
+
 * Empresa 1
 * Empresa 2
 * Your Company
@@ -54,6 +57,7 @@ Os teste unitários foram feitos utilizando Junit, pois é a biblioteca padrão 
 ### CONSIDERAÇÕES FINAIS ###
 
 O projeto teve boas implementações, mas como o tempo proposto foi relativamente pouco ficaram algumas pontas soltas como:
+
 * Tratar melhor as exceções e possíveis erros geradas pelas requisições
 * Tratar um possível vencimento do accesstoken
 * Deixar a `SearchView` no mesmo visual proposto no design
