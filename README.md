@@ -2,51 +2,66 @@
 
 # README #
 
-Estes documento README tem como objetivo fornecer as informações necessárias para realização do projeto Empresas.
+Estes documento README tem como objetivo fornecer as informações sobre o projeto desenvolvido para o processo seletivo para Ioasys.
 
-### O QUE FAZER ? ###
+### SOBRE O PROJETO ###
 
-* Você deve realizar um fork deste repositório e, ao finalizar, enviar o link do seu repositório para a nossa equipe. Lembre-se, NÃO é necessário criar um Pull Request para isso.
+O escopo do projeto consistia em criar um aplicativo Android nativo que consumisse uma API específica. O projeto foi desenvolvido todo em Kotlin utilizando a arquitetura MVP.
+**Obs: API que foi disponibilizada no escopo do projeto está (ou estava até então) fora do ar, com isso, foi criado uma API semelhante que retorna os mesmos dados de oauth e das empresas para assim continuar o desenvolvimento do projeto. Link no final**
 
-### ESCOPO DO PROJETO ###
+### INSTALAÇÃO ###
 
-* Deve ser criado um aplicativo Android utilizando linguagem Java ou Kotlin com as seguintes especificações:
-* Login e acesso de Usuário já registrado
-	* Para o login usamos padrões OAuth 2.0. Na resposta de sucesso do login a api retornará 3 custom headers (access-token, client, uid);
-	* Para ter acesso as demais APIS precisamos enviar esses 3 custom headers para a API autorizar a requisição;
-* Listagem de Empresas
-* Detalhamento de Empresas
+Baixe o repositório
 
-### Informações Importantes ###
+```
+git clone git clone https://bitbucket.org/felixsoares/empresas-android.git
+cd empresas-android
+```
+Abra o [Android Studio, importe o projeto e execute](https://www.youtube.com/watch?v=70PvCIIejvg) em um emulador ou dispositivo que preferir. O aplicativo está com o nome Ioasys e ícone padrão de um projeto novo gerado pelo Android Studio.
 
-* Layout e recortes disponíveis no Zeplin (http://zeplin.io)
-Login - teste_ioasys
-Senha - ioasys123
+Usuário para login:
+* email: testeapple@<span></span>ioasys<span></span>.com.br
+* senha: 12341234
 
-* Integração disponível a partir de uma collection para Postman (https://www.getpostman.com/apps) disponível neste repositório.
-* O `README.md` deve conter uma pequena justificativa de cada biblioteca adicionada ao projeto como dependência.
-* O `README.md` deve conter tambem o que você faria se tivesse mais tempo.
-* O `README.md` do projeto deve conter instruções de como executar a aplicação
-* Independente de onde conseguiu chegar no teste é importante disponibilizar seu fonte para analisarmos.
+Nomes das empresas disponíveis para pesquisa:
+* Empresa 1
+* Empresa 2
+* Your Company
 
-### Dados para Teste ###
+### INFORMAÇÕES DO PROJETO ###
 
-* Servidor: https://empresas.ioasys.com.br
-* Versão da API: v1
-* Usuário de Teste: testeapple@ioasys.com.br
-* Senha de Teste : 12341234
+* Versão mínima suportada: 21
+* Linguagem utilizada: Kotlin
+* Testes realizados: Unitários
 
-### Dicas ###
+#### Bibliotecas utilizadas ####
 
-* Para requisição sugerimos usar a biblioteca Retrofit
-* Para download e cache de imagens use a biblioteca Glide
-* Para parse de Json use a biblioteca GSON
+Nome| Objetivo
+--------- | ------
+Rx (Java, Kotlin, Android, Adapter)     | Criar requisições assíncronas, gerenciar e tratar itens de forma reativa
+Material Design    | Prover componentes visuais de acordo com o design system proposto pela Google
+Retrofit    | Realizar consumo de dados REST
+Gson  | Desserializador de dados
+Koin    | Usado para criar injeções de dependência
+Mockk  | Utilizado para criar objetos e retorno de funções mocadas (retornos simulados)
+Glide    | Utilizado para download e cache de imagens
+Junit  | Utilizado para criar testes unitários e asserções de dados
 
-### Bônus ###
+#### Testes unitários ####
 
-* Testes unitários, pode usar a ferramenta que você tem mais experiência, só nos explique o que ele tem de bom.
-* Usar uma arquitetura testável. Ex: MVP, MVVM, Clean, etc.
-* Material Design
-* Utilizar alguma ferramenta de Injeção de Dependência, Dagger, Koin e etc..
-* Utilizar Rx, LiveData, Coroutines.
-* Padrões de projetos
+Os teste unitários foram feitos utilizando Junit, pois é a biblioteca padrão ao se criar um projeto Android do zero. Essa ferramenta provê o uso de asserções de dado que é essencial para validação de dados e regras de negócio. Além disso foi utilizado também o Mockk para criar retornos simulados e verificações de chamadas de métodos.
+
+### CONSIDERAÇÕES FINAIS ###
+
+O projeto teve boas implementações, mas como o tempo proposto foi relativamente pouco ficaram algumas pontas soltas como:
+* Tratar melhor as exceções e possíveis erros geradas pelas requisições
+* Tratar um possível vencimento do accesstoken
+* Deixar a `SearchView` no mesmo visual proposto no design
+* Criar animações para melhorar a experiência do usuário
+* Criar um `presenter` para tela de detalhe da empresa
+* Testar a tela de detalhamento
+* Criar testes de `UI`
+* Padronizar tamanhos de fontes e espaçamentos
+* Testar e mocar a classe de `SharedPreferences`
+
+Link para [API desenvolvida](https://github.com/felixsoares/EmpresasAPI)
