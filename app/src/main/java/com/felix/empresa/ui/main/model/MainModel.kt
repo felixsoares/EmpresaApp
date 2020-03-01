@@ -12,7 +12,7 @@ class MainModel {
         hasEnterprise = true
     }
 
-    fun setHasNotEnterprises(){
+    fun setHasentEnterprises(){
         hasEnterprise = false
     }
 

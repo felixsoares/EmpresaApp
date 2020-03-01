@@ -64,15 +64,14 @@ class MainPresenter(
                     when {
                         response.success && response.enterprises.isNotEmpty() -> {
                             mModel.setHasEnterprises()
-                            mView.hideMessage()
                             mView.setupEnterprises(response.enterprises)
                         }
                         response.success && response.enterprises.isEmpty() -> {
-                            mModel.setHasNotEnterprises()
+                            mModel.setHasentEnterprises()
                             mView.showMessage("Nenhuma empresa foi encontrada\npara busca realizada")
                         }
                         !response.success -> {
-                            mModel.setHasNotEnterprises()
+                            mModel.setHasentEnterprises()
                             mView.showMessage(response.errors[0])
                         }
                     }

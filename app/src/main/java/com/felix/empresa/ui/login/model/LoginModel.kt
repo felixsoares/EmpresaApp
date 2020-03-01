@@ -7,11 +7,11 @@ class LoginModel {
     }
 
     private fun isEmailValid(email: String): Boolean {
-        return email.isNotEmpty()
+        return email.trim().isNotEmpty()
     }
 
     private fun isPasswordValid(password: String): Boolean {
-        return password.isNotEmpty() && password.length > 6
+        return password.trim().isNotEmpty() && password.length >= 6
     }
 
 }
