@@ -12,7 +12,7 @@ O escopo do projeto consistia em criar um aplicativo Android nativo que consumis
 Baixe o repositório
 
 ```
-git clone git clone https://bitbucket.org/felixsoares/empresas-android.git
+git clone git clone https://github.com/felixsoares/EmpresaApp.git
 cd empresas-android
 ```
 
