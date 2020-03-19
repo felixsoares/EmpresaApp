@@ -1,13 +1,11 @@
-![N|Solid](logo_ioasys.png)
 
 # README #
 
-Estes documento README tem como objetivo fornecer as informações sobre o projeto desenvolvido para o processo seletivo para Ioasys.
+Estes documento README tem como objetivo fornecer as informações sobre o projeto desenvolvido.
 
 ### SOBRE O PROJETO ###
 
 O escopo do projeto consistia em criar um aplicativo Android nativo que consumisse uma API específica. O projeto foi desenvolvido todo em Kotlin utilizando a arquitetura MVP.
-**Obs: API que foi disponibilizada no escopo do projeto está (ou estava até então) fora do ar, com isso, foi criado uma API semelhante que retorna os mesmos dados de oauth e das empresas para assim continuar o desenvolvimento do projeto. Link no final**
 
 ### INSTALAÇÃO ###
 
@@ -22,7 +20,7 @@ Abra o [Android Studio, importe o projeto e execute](https://www.youtube.com/wat
 
 Usuário para login:
 
-* email: testeapple@ioasys.com.br
+* email: testeapple@empresa.com.br
 * senha: 12341234
 
 Nomes das empresas disponíveis para pesquisa:
